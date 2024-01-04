@@ -1,0 +1,17 @@
+pip install django
+django-admin startproject namaproyek
+cd namaproyek
+python manage.py startapp paulumi12
+# di file models.py
+from django.db import models
+
+class Message(models.Model):
+    sender = models.CharField(max_length=50)
+    content = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+python manage.py makemigrations
+python manage.py migrate
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+Buka browser dan akses http://127.0.0.1:8000/admin/ untuk masuk ke Django Admin dan tambahkan beberapa pesan.
